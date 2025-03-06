@@ -1354,11 +1354,11 @@ max-width: ${e=>e.theme.logo.maxWidth};
 padding: 15px;
 margin: auto;
 width: 80%;
-display: none;
+display: block;
 `,cy=ga.div`
 text-align: center;
 `,uy=ga.a`
-display: inline-block;
+display: none;
 `;Object.defineProperty,Object.getOwnPropertyDescriptor;let py=class extends n.Component{render(){const{info:e}=this.props,t=e["x-logo"];if(!t||!t.url)return null;const r=t.href||e.contact&&e.contact.url,o=t.altText?t.altText:"logo",i=n.createElement(ly,{src:t.url,alt:o});return n.createElement(cy,{style:{backgroundColor:t.backgroundColor}},r?(a=r,e=>n.createElement(uy,{href:a},e))(i):i);var a}};py=((e,t,n,r)=>{for(var o,i=t,a=e.length-1;a>=0;a--)(o=e[a])&&(i=o(i)||i);return i})([im],py);var dy=Object.defineProperty,fy=Object.getOwnPropertySymbols,hy=Object.prototype.hasOwnProperty,my=Object.prototype.propertyIsEnumerable,gy=(e,t,n)=>t in e?dy(e,t,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[t]=n,yy=(e,t)=>{for(var n in t||(t={}))hy.call(t,n)&&gy(e,n,t[n]);if(fy)for(var n of fy(t))my.call(t,n)&&gy(e,n,t[n]);return e};class vy extends n.Component{render(){return n.createElement(Pa,null,(e=>n.createElement(Lu,null,(t=>this.renderWithOptionsAndStore(e,t)))))}renderWithOptionsAndStore(e,t){const{source:r,htmlWrap:o=(e=>e)}=this.props;if(!t)throw new Error("When using components in markdown, store prop must be provided");const i=new jl(e).renderMdWithComponents(r);return i.length?i.map(((e,r)=>{if("string"==typeof e)return n.cloneElement(o(n.createElement(Mf,{html:e,inline:!1,compact:!1})),{key:r});const i=e.component;return n.createElement(i,yy({key:r},yy(yy({},e.props),e.propsSelector(t))))})):null}}var by=r(4184),wy=r.n(by);const xy=ga.span.attrs((e=>({className:`operation-type ${e.type}`})))`
 width: 9ex;
 display: inline-block;
