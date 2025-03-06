@@ -1354,7 +1354,7 @@ max-width: ${e=>e.theme.logo.maxWidth};
 padding: 15px;
 margin: auto;
 width: 80%;
-display: block;
+display: none;
 `,cy=ga.div`
 text-align: center;
 `,uy=ga.a`
