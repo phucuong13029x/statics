@@ -1352,6 +1352,7 @@ margin-left: -${15}px;
 max-height: ${e=>e.theme.logo.maxHeight};
 max-width: ${e=>e.theme.logo.maxWidth};
 padding: ${e=>e.theme.logo.gutter};
+margin: 15px;
 width: 100%;
 display: block;
 `,cy=ga.div`
