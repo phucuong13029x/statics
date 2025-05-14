@@ -150,9 +150,33 @@ function editPopup() {
     }
 };
 
+// function showAlert(t, m) {
+//     rmmodel('alert');
+//     if (!m) {return;}
+//     const alert = document.createElement('div');
+//     alert.innerHTML = `
+//         <div class="d-flex justify-content-between">
+//             <p class="mb-0">${m}</p>
+//             <button type="button" class="ms-2 btn-close" data-mdb-dismiss="alert" aria-label="Close"></button>
+//         </div>
+//     `;
+//     alert.classList.add('alert', 'fade', t);
+//     document.body.appendChild(alert);
+//     const alertInstance = new mdb.Alert(alert, {
+//         stacking: true,
+//         hidden: true,
+//         position: 'top-right',
+//         autohide: true,
+//         delay: 3000,
+//     });
+//     alertInstance.show();
+// }
+// setInterval(rmmodel('alert'), 10000);
+
 function showAlert(t, m) {
     rmmodel('alert');
-    if (!m) {return;}
+    if (!m) return;
+
     const alert = document.createElement('div');
     alert.innerHTML = `
         <div class="d-flex justify-content-between">
@@ -160,8 +184,17 @@ function showAlert(t, m) {
             <button type="button" class="ms-2 btn-close" data-mdb-dismiss="alert" aria-label="Close"></button>
         </div>
     `;
-    alert.classList.add('alert', 'fade', t);
+
+    // Tách class nếu t là chuỗi nhiều class
+    if (t) {
+        const classes = t.trim().split(/\s+/);
+        alert.classList.add('alert', 'fade', ...classes);
+    } else {
+        alert.classList.add('alert', 'fade');
+    }
+
     document.body.appendChild(alert);
+
     const alertInstance = new mdb.Alert(alert, {
         stacking: true,
         hidden: true,
@@ -169,10 +202,11 @@ function showAlert(t, m) {
         autohide: true,
         delay: 3000,
     });
+
     alertInstance.show();
 }
-
-setInterval(rmmodel('alert'), 10000);
+// Đúng cách dùng setInterval
+setInterval(() => rmmodel('alert'), 10000);
 
 function fdate(dateString) {
     let date = new Date(dateString);
